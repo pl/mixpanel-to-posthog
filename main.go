@@ -72,6 +72,7 @@ func getPosthogClient() posthog.Client {
 	posthogClient, err := posthog.NewWithConfig(posthogApiKey, posthog.Config{
 		Endpoint:       posthogEndpoint,
 		PersonalApiKey: posthogPersonalApiKey,
+		HistoricalMigration: true,
 	})
 	if err != nil {
 		color.Red("\nEncountered an error while creating Posthog client: %v", err)
